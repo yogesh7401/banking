@@ -1,0 +1,49 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*.local
+.env.local
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS-generated files
+*.swp
+*.swo
+
+# Node.js (React frontend)
+banking-web/node_modules/
+banking-web/build/
+banking-web/.next/
+banking-web/.turbo/
+banking-web/.parcel-cache/
+banking-web/dist/
+
+# React test coverage
+banking-web/coverage/
+
+# Spring Boot (Java backend)
+banking-api/target/
+banking-api/.classpath
+banking-api/.project
+banking-api/.settings/
+banking-api/*.iml
+banking-api/*.jar
+banking-api/*.war
+
+# Maven Wrapper
+banking-api/.mvn/
+banking-api/mvnw
+banking-api/mvnw.cmd

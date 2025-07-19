@@ -1,0 +1,1 @@
+export const inputClassName : string =  "bg-gray-50 border border-purple-300 focus:outline-0 text-gray-900 text-sm rounded-lg block w-full p-2"
