@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: banking
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./banking-api/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    build:
+      context: ./banking-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/banking
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      JWT_SECRET: L$8f7@zPQvA!3#mXc5r*B2&d9Nj^T0Kq
+  
+  web:
+    build: 
+      context: ./banking-web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  db_data:
