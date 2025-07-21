@@ -36,7 +36,7 @@ A full-stack banking application with a React + TypeScript frontend and a Spring
 
 ## UI Preview
 
-![UI Preview](banking-web/src/assets/image/UI.png)
+![UI Preview](banking-web/src/assets/image/UI.PNG)
 
 ## Getting Started
 
