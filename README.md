@@ -34,6 +34,10 @@ A full-stack banking application with a React + TypeScript frontend and a Spring
 - [Docker](https://www.docker.com/) for containerization
 - [Docker Compose](https://docs.docker.com/compose/) for multi-service orchestration
 
+## UI Preview
+
+![UI Preview](banking-web/src/assets/image/UI.png)
+
 ## Getting Started
 
 ### Prerequisites
