@@ -28,7 +28,7 @@ export default function Login() {
       await dispatch(loginUser({ accountNumber, password })).unwrap();
       navigate('/');
     } catch (error) {
-      console.log(error);
+      alert(error);
     }   
   };
 

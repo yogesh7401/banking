@@ -19,7 +19,7 @@ const PrivateRoute = () => {
 
   if (user) return <Layout />;
 
-  if (!user && !isLoading) <Navigate to="/login" replace />;
+  if (!user && !isLoading) return <Navigate to="/login" replace />;
   
 };
 

@@ -9,12 +9,14 @@ interface Props {
 export default function LastTransactions(props: Props) {
     const user = useAppSelector((state) => state.auth.user);
     const [transactions, setTransactions] = useState([]);
+    const [transactionsLoading, setTransactionsLoading] = useState(true);
 
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
                 const response = await getLastTransactions(user?.accountNumber as string);
                 setTransactions(response.data.content);
+                setTransactionsLoading(false);
             } catch (error) {
                 console.error("Error fetching transactions:", error);
             }
@@ -58,8 +60,10 @@ export default function LastTransactions(props: Props) {
                             </li>
                         ))}
                     </ul>
-                ) : (
+                ) : !transactionsLoading ? (
                     <p className="text-gray-500">No transactions found.</p>
+                ) : (
+                    <p className="text-gray-500">Loading transactions...</p>
                 )}
             </div>
         </div>

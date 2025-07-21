@@ -72,7 +72,7 @@ public class JwtUtil {
             return username.equals(userDetails.getUsername()) &&
                    !claims.getExpiration().before(new Date());
         } catch (JwtException | IllegalArgumentException e) {
-            return false;
+            throw new JwtException("Invalid JWT token", e);
         }
     }
 
